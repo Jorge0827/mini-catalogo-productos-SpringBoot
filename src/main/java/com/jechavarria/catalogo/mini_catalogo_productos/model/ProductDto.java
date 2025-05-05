@@ -2,24 +2,24 @@ package com.jechavarria.catalogo.mini_catalogo_productos.model;
 
 public class ProductDto {
 
-    private Long id;
+    private int id;
     private String name;
     private double price;
 
     public ProductDto() {
     }
 
-    public ProductDto(Long id, String name, double price) {
+    public ProductDto(int id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

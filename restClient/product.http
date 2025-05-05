@@ -1,0 +1,31 @@
+### Get All Products
+
+GET http://localhost:8081/api/products
+
+### Get Product by ID
+
+GET http://localhost:8081/api/products/1
+
+### Create Product
+POST http://localhost:8081/api/products 
+Content-Type: application/json
+
+{
+    "id": 11,
+    "name": "Mouse",
+    "price": 19.99
+}   
+
+### Delete Product
+DELETE http://localhost:8081/api/products/11
+
+
+
+### Update Product
+PUT http://localhost:8081/api/products/10
+Content-Type: application/json
+
+{
+    "name": "Mouse Gamer",
+    "price": 20.54
+}

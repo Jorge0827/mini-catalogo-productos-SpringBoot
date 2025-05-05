@@ -22,16 +22,16 @@ public class ProductController {
 
     public ProductController() {
         // Agregando algunos productos de ejemplo
-        products.add(new ProductDto(1L, "Laptop", 999.99));
-        products.add(new ProductDto(2L, "Smartphone", 599.99));
-        products.add(new ProductDto(3L, "Tablet", 299.99));
-        products.add(new ProductDto(4L, "Mouse", 19.99));
-        products.add(new ProductDto(5L, "Keyboard", 29.99));
-        products.add(new ProductDto(6L, "Monitor", 149.99));
-        products.add(new ProductDto(7L, "Headphones", 49.99));
-        products.add(new ProductDto(8L, "Speaker", 79.99));
-        products.add(new ProductDto(9L, "Webcam", 24.99));
-        products.add(new ProductDto(10L, "Microphone", 14.99));
+        products.add(new ProductDto(1, "Laptop", 999.99));
+        products.add(new ProductDto(2, "Smartphone", 599.99));
+        products.add(new ProductDto(3, "Tablet", 299.99));
+        products.add(new ProductDto(4, "Mouse", 19.99));
+        products.add(new ProductDto(5, "Keyboard", 29.99));
+        products.add(new ProductDto(6, "Monitor", 149.99));
+        products.add(new ProductDto(7, "Headphones", 49.99));
+        products.add(new ProductDto(8, "Speaker", 79.99));
+        products.add(new ProductDto(9, "Webcam", 24.99));
+        products.add(new ProductDto(10, "Microphone", 14.99));
 
     }
 
@@ -41,12 +41,9 @@ public class ProductController {
     }
 
     @GetMapping("/{id}") // Método GET para obtener un producto por su ID
-    public ProductDto getProductById(@PathVariable Long id) {
+    public ProductDto getProductById(@PathVariable int id) {
         for (ProductDto productDto : products) {
-            if (productDto.getId().equals(id)) {
-                return productDto;
-            }
-
+                return products.get(id);
         }
         return null;
 
@@ -59,8 +56,8 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}") // Método DELETE para eliminar un producto por su ID
-    public void deleteProduct(@PathVariable Long id) {
-        products.removeIf(productDto -> productDto.getId().equals(id));
+    public void deleteProduct(@PathVariable int id) {
+        products.remove(id);
     }
 
     @PutMapping("/{id}") // Método PUT para actualizar un producto por su ID
